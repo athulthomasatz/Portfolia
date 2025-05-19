@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useMemo } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import "./Hero.css";
@@ -95,12 +95,13 @@ const Description = styled(motion.p)`
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const skills = [
-    "Web Developer",
-    "Python Developer",
-    "Data Analyst",
-    "Full Stack Developer(MERN)",
-  ];
+  const skills = useMemo(() => [
+  "Software Engineer",
+  "Web Developer",
+  "Front-end Developer",
+  "Back-end Developer",
+  // ... other skills
+], []);
   const [skillIndex, setSkillIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
